@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Level_0001.gd" type="Script" id=1]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TopLeft" type="Position2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="botomRight" type="Position2D" parent="."]
+position = Vector2( 464, 288 )
+
+[node name="Brick" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16, 280 )
+
+[node name="Brick2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 280 )
+
+[node name="Brick3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 112, 280 )
+
+[node name="Brick4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 280 )
+
+[node name="Brick5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 448, 280 )
+
+[node name="Brick6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 208, 280 )
+
+[node name="Brick7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 256, 280 )
+
+[node name="Brick8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 304, 280 )
+
+[node name="Brick9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352, 280 )
+
+[node name="Brick10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 400, 280 )

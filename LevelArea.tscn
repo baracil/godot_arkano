@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="LevelArea" type="Polygon2D"]
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 0, 0, 464, 0, 464, 288, 0, 288 )

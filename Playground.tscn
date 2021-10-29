@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://DeathLine.tscn" type="PackedScene" id=1]
+
+[node name="Playground" type="StaticBody2D"]
+
+[node name="Walls" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 528, 0, 528, 576, 512, 576, 512, 16, 16, 16, 16, 576, 0, 576 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 528, 0, 528, 576, 512, 576, 512, 16, 16, 16, 16, 576, 0, 576 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DeathLine" parent="." instance=ExtResource( 1 )]
+position = Vector2( 255.156, 574.307 )
