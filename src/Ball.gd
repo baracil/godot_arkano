@@ -57,8 +57,3 @@ func update_position(delta):
 
 	if not glu_to_palette:
 		set_direction(Physics.update_direction_on_collision(direction,collision_info))
-
-
-
-func _on_VisibilityNotifier2D_screen_exited():
-	emit_signal(Global.signal_ball__lost, get_instance_id())	

@@ -37,7 +37,8 @@ func _on_ball_palette_collision(ball:Node2D, collision_info:KinematicCollision2D
 		balls_offsets[ball.get_instance_id()] = ball.position.x - palette.position.x
 		
 	
-func _on_ball_lost(ball_id):
+func _on_ball_lost(body:Node):
+	var ball_id = body.get_instance_id()
 	var ball = balls.get(ball_id)
 	if ball == null:
 		return
@@ -51,6 +52,8 @@ func _on_ball_lost(ball_id):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_reset_ball()
+	$Playground/DeathLine.connect("body_entered",self,"_on_ball_lost")
+	
 	Levels._set_level_area($LevelArea)
 	Levels.connect("level_done",self,"_on_level_done")
 	Levels.load_level(1)

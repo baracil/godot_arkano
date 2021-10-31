@@ -9,7 +9,7 @@
 script = ExtResource( 4 )
 
 [node name="Palette" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 560 )
+position = Vector2( 511.156, 560.3 )
 _sticky = false
 
 [node name="Playground" parent="." instance=ExtResource( 1 )]

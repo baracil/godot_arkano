@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-export var speed := 10;
+export var speed := 600;
 export var dead_zone := 0.125;
 export var angle_factor = 1 setget set_angle_factor
 
@@ -53,9 +53,6 @@ func is_sticky():
 func _ready():
 	update_screen_size()
 	center_palette_horizontally()
-	
-	
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
