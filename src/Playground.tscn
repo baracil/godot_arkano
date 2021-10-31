@@ -22,9 +22,6 @@ __meta__ = {
 [node name="DeathLine" type="Area2D" parent="."]
 position = Vector2( 264, 574.307 )
 
-[node name="Polygon2D" type="Polygon2D" parent="DeathLine"]
-polygon = PoolVector2Array( -264, -10.307, 264, -10.307, 264, 13.693, -268, 9.69299 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathLine"]
 shape = SubResource( 1 )
 __meta__ = {
