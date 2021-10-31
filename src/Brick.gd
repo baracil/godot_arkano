@@ -2,6 +2,7 @@ extends StaticBody2D
 
 signal destroyed;
 
+#todo move Gradient to Global or another autoload
 var color:Color = Color.red
 var strength := 2
 var health := 1
@@ -23,7 +24,7 @@ func hit():
 	if (health>0):
 		_decrease_health()
 		if (health <= 0):
-			emit_signal("destroyed",strength)
+			emit_signal(Constants.signal_brick__destroyed,strength)
 			queue_free()
 	
 # Called when the node enters the scene tree for the first time.

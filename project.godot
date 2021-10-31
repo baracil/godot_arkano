@@ -8,17 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://src/levels/Level.gd"
+} ]
+_global_script_class_icons={
+"Level": ""
+}
+
 [application]
 
 config/name="Experiment"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://src/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.tscn"
-Physics="*res://Physics.tscn"
-Levels="*res://Levels.tscn"
+Constants="*res://src/autoload/Constants.gd"
+Global="*res://src/autoload/Global.tscn"
+Physics="*res://src/autoload/Physics.tscn"
+Levels="*res://src/autoload/Levels.tscn"
 
 [display]
 

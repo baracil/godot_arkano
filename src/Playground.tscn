@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://DeathLine.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/DeathLine.tscn" type="PackedScene" id=1]
 
 [node name="Playground" type="StaticBody2D"]
 

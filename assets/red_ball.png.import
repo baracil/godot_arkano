@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/palette.png-d856c922a66047950b8cb0cc7a9eeeb7.stex"
+path="res://.import/red_ball.png-3ffcf3541c1944fffbbc77806fe0b147.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://palette.png"
-dest_files=[ "res://.import/palette.png-d856c922a66047950b8cb0cc7a9eeeb7.stex" ]
+source_file="res://assets/red_ball.png"
+dest_files=[ "res://.import/red_ball.png-3ffcf3541c1944fffbbc77806fe0b147.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

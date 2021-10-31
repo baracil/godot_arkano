@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Level
 
 signal level_done
 
@@ -18,7 +18,7 @@ func _on_brick_destroyed(strength):
 func _init_level(level_number:int):
 	_level_number = level_number
 	for brick in get_children():
-		if brick.is_in_group(Global.brick_group):
+		if brick.is_in_group(Constants.group_brick):
 			_number_of_bricks+=1
 			brick.connect("destroyed",self, "_on_brick_destroyed")
 	

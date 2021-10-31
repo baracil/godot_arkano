@@ -33,14 +33,13 @@ func bounce_angle_offset(collision_position:Vector2):
 		return 0;
 	return angle_factor*alpha;	
 	
-func process_input():
+func process_input(delta):
 	var direction = Vector2(0,0);
 	if (Input.is_action_pressed("ui_left")):
 		direction.x -= 1
 	if (Input.is_action_pressed("ui_right")):
 		direction.x += 1
-
-	move_and_collide(direction*speed);
+	move_and_collide(direction*speed*delta);
 	
 
 func set_sticky(sticky:bool):
@@ -60,9 +59,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	process_input()
-	pass
+func _physics_process(delta):
+	process_input(delta)
 
 
 func _on_Palette_body_entered(body):
