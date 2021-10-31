@@ -10,6 +10,9 @@ __meta__ = {
 }
 
 [node name="botomRight" type="Position2D" parent="."]
-position = Vector2( 464, 288 )
+position = Vector2( 495, 272 )
 
 [node name="LevelArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( -16, -16 )
+color = Color( 0.882353, 0.882353, 0.882353, 0.133333 )
+polygon = PoolVector2Array( 16, 16, 511, 16, 511, 288, 16, 288 )

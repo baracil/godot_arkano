@@ -15,7 +15,7 @@ func put_ball_on_palette(ball:KinematicBody2D, offset:float = 0):
 	var palette_sprite_size = palette_sprite.get_rect().size;
 	var ball_size = ball.get_node("Sprite").get_rect().size
 	
-	var ball_x_offset = -ball_size.x*0.5+offset;
+	var ball_x_offset = offset;
 	ball.position.x = palette.position.x + ball_x_offset
 	ball.position.y = palette.position.y - (palette_sprite_size.y + ball_size.y)*0.5
 
@@ -54,10 +54,16 @@ func _ready():
 	_reset_ball()
 	$Playground/DeathLine.connect("body_entered",self,"_on_ball_lost")
 	
-	Levels._set_level_area($LevelArea)
+	Levels._set_level_area($Playground/LevelArea)
 	Levels.connect("level_done",self,"_on_level_done")
 	Levels.load_level(1)
-
+	
+	Global.connect(Constants.signal_global__score_changed,self,"_update_on_score_changed")
+	_update_on_score_changed()
+	
+func _update_on_score_changed():
+	var score:String = String(Global.get_score());
+	$HUD/GridContainer/Score.set_text(score)
 
 func _remove_all_balls():
 	for id in balls:

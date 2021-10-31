@@ -1,7 +1,18 @@
 extends Node
 
+signal score_changed
 
-var score:int = 0
+var _score:int = 0
+
+func get_score()->int:
+	return _score
+
+func add_to_score(value:int):
+	print("Add to score ",value)
+	if value == 0:
+		return
+	_score += value
+	emit_signal(Constants.signal_global__score_changed)
 
 func initialize(object) -> bool:
 	if (object.has_method("initialize")):

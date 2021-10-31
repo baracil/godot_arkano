@@ -45,6 +45,14 @@ ui_launch_ball={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="wall"
+2d_physics/layer_2="palette"
+2d_physics/layer_3="ball"
+2d_physics/layer_4="brick"
+2d_physics/layer_5="bonus"
+
 [physics]
 
 common/enable_pause_aware_picking=true
