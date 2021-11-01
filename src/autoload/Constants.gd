@@ -16,6 +16,7 @@ const signal_brick__destroyed = "destroyed"
 const ball_scene_path = "res://src/Ball.tscn"
 const hud_palette_scene_path = "res://src/HUDPalette.tscn"
 
+enum BounceMode {NORMAL, REVERSED, VERTICAL, DECREASE_CLOCK, DECREASE_TRIGO}
 
 func level_scene_path(level_number:int) -> String :
 	var group = (level_number/10)*10+1

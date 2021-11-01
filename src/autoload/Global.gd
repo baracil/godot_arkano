@@ -34,7 +34,6 @@ func get_score()->int:
 	return _score
 
 func add_to_score(value:int):
-	print("Add to score ",value)
 	if value == 0:
 		return
 	_score += value
