@@ -6,10 +6,6 @@ var balls = {}
 var balls_offsets = {}
 
 onready var _paddle = $Paddle
-onready var _paddle_sprite = $Paddle/Sprite
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,15 +22,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-
 	for id in balls:
 		var ball_info:BallInfo = balls.get(id)
 		ball_info.update_position_if_glu_on_paddle(_paddle)
 
 
-func put_ball_on_paddle(ball:KinematicBody2D, offset:float = 0):
-	var paddle_sprite_size = _paddle_sprite.get_rect().size;
-	var ball_size = ball.get_node("Sprite").get_rect().size
+func put_ball_on_paddle(ball:Ball, offset:float = 0):
+	var paddle_sprite_size = _paddle.size();
+	var ball_size = ball.size()
 	
 	var ball_x_offset = offset;
 	ball.position.x = _paddle.position.x + ball_x_offset
@@ -90,9 +85,8 @@ func _on_player_died():
 	
 func _remove_all_balls():
 	for id in balls:
-		var ball = balls.get(id)
-		ball.paddle=null
-		ball.queue_free()
+		var ball_info:BallInfo = balls.get(id)
+		ball_info._ball.queue_free()
 	balls.clear()
 
 func _reset_ball():

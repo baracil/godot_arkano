@@ -12,3 +12,9 @@ position = Vector2( 0, 64 )
 
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 264.5, 590.2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 16, 352 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 511, 352 )

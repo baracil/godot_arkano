@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Level",
 "language": "GDScript",
 "path": "res://src/game/levels/Level.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Paddle",
+"language": "GDScript",
+"path": "res://src/game/Paddle.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
 "GitAPI": "",
-"Level": ""
+"Level": "",
+"Paddle": ""
 }
 
 [application]
@@ -38,6 +44,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Colors="*res://src/autoload/Colors.gd"
 Events="*res://src/autoload/Events.gd"
 Constants="*res://src/autoload/Constants.gd"
 Global="*res://src/autoload/Global.tscn"

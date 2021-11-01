@@ -1,7 +1,7 @@
 tool
 extends StaticBody2D
 
-export(Constants.BrickType) var brick_type = Constants.BrickType.STANDARD setget set_brick_type
+export(Colors.BrickType) var brick_type = Colors.BrickType.STANDARD setget set_brick_type
 
 export(int,1,5) var strength := 1 setget set_strength
 export(bool) var use_own_color = false setget set_use_own_color
@@ -10,7 +10,7 @@ export(Color) var own_color:Color = Color.black setget set_own_color
 var _health:int= 1
 
 
-onready var _polygone2d = $Polygon2D
+onready var _polygone2d = $Content
 
 func set_own_color(value):
 	own_color = value
@@ -33,20 +33,15 @@ func set_brick_type(value):
 	brick_type = value
 	_update_color();
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 func _update_color():
 	var color = null
 	if use_own_color:
-		color = Constants.get_brick_color(own_color,strength, _health)
+		color = Colors.get_brick_color(own_color,strength, _health)
 	elif self.is_indestructible():
-		color = Constants.default_indestructible_brick_color
+		color = Colors.default_indestructible_brick_color
 	else:
-		var default_color = Constants.get_default_brick_color(strength)
-		color = Constants.get_brick_color(default_color, strength, _health)
+		var default_color = Colors.get_default_brick_color(strength)
+		color = Colors.get_brick_color(default_color, strength, _health)
 
 	if not _polygone2d == null:
 		_polygone2d.set_color(color)
@@ -56,7 +51,7 @@ func _decrease_health():
 	_update_color()
 
 func is_indestructible():
-	return brick_type == Constants.BrickType.INDESCTRUTIBLE
+	return brick_type == Colors.BrickType.INDESCTRUTIBLE
 
 func hit():
 	if (_health>0 and not is_indestructible()):
@@ -67,8 +62,5 @@ func hit():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	gradient.add_point(0, color)
-#	gradient.add_point(1, Color.gray)
 	_health = strength
 	_update_color()
-	pass

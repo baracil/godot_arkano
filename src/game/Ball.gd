@@ -8,7 +8,6 @@ var velocity = Vector2(0,0)
 var speed_factor = 1
 export var base_speed = 360 setget set_base_speed,get_base_speed
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -19,6 +18,9 @@ func get_base_speed():
 func set_base_speed(value):
 	base_speed = value
 	update_velocity()
+
+func size() -> Vector2:
+	return $Sprite.get_rect().size
 
 func set_direction(value):
 	_direction = value

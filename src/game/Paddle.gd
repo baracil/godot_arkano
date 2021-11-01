@@ -1,11 +1,14 @@
 extends KinematicBody2D
-
+class_name Paddle
 
 export var speed := 600;
 
 export(bool) var _sticky
 
-onready var sprite: Sprite = $Sprite;
+onready var _sprite: Sprite = $Sprite;
+
+func size() -> Vector2:
+	return _sprite.get_rect().size
 
 #return
 # -1 when position left of dead zone
@@ -13,7 +16,7 @@ onready var sprite: Sprite = $Sprite;
 #  1 when position right of dead zone
 func get_bounce_angle(
 	collision_position:Vector2) -> float:
-	var sprite_width = sprite.get_rect().size.x;
+	var sprite_width = size().x;
 	var alpha = 8*2*(collision_position.x-position.x)/sprite_width;
 	if alpha < -6:
 		return Constants.BouncedAngle[0]
