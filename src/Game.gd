@@ -68,7 +68,6 @@ func _ready():
 	
 func _update_on_score_changed():
 	var score:String = String(Global.get_score());
-	$HUD/GridContainer/Score.set_text(score)
 
 func _remove_all_balls():
 	for id in balls:
@@ -79,13 +78,10 @@ func _remove_all_balls():
 
 func _on_nb_lives_changed():
 	var nb_lives = Global.get_nb_lives()
-	
 	while hub_lives_displayed.size() > nb_lives:
 		_remove_one_hud_life()
-		
 	while hub_lives_displayed.size() < nb_lives:
 		_add_one_hud_life()
-	
 	if (nb_lives>0):
 		_reset_ball()
 	else:

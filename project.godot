@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
 "path": "res://src/levels/Level.gd"
 } ]
 _global_script_class_icons={
+"GitAPI": "",
 "Level": ""
 }
 
@@ -33,9 +39,14 @@ Levels="*res://src/autoload/Levels.tscn"
 
 [display]
 
-window/size/height=576
+window/size/width=527
+window/size/height=640
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[gdnative]
+
+singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
 [input]
 
