@@ -17,11 +17,11 @@ func get_bounce_angle(
 	var alpha = 8*2*(collision_position.x-position.x)/sprite_width;
 	if alpha < -6:
 		return Constants.BouncedAngle[0]
-	elif alpha < -2:
+	elif alpha < -2.5:
 		return Constants.BouncedAngle[1]
 	elif alpha < 0:
 		return Constants.BouncedAngle[2]
-	elif alpha < 2:
+	elif alpha < 2.5:
 		return Constants.BouncedAngle[3]
 	elif alpha < 6:
 		return Constants.BouncedAngle[4]

@@ -27,7 +27,7 @@ func _ready():
 	Levels.load_level(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	for id in balls:
 		var ball_info:BallInfo = balls.get(id)
 		ball_info.update_position_if_glu_on_paddle(paddle)
@@ -40,7 +40,7 @@ func put_ball_on_paddle(ball:KinematicBody2D, offset:float = 0):
 	var ball_x_offset = offset;
 	ball.position.x = paddle.position.x + ball_x_offset
 	ball.position.y = paddle.position.y - (paddle_sprite_size.y + ball_size.y)*0.5
-	ball.direction = paddle.get_bounced_direction(ball.position)
+	ball.set_direction(paddle.get_bounced_direction(ball.position))
 	
 	_get_or_create_ball_info(ball as Ball).offset = ball_x_offset
 	

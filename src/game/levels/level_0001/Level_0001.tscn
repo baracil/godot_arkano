@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/levels/level_0001/Level_0001.gd" type="Script" id=1]
-[ext_resource path="res://src/Brick.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/LevelArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/game/levels/level_0001/Level_0001.gd" type="Script" id=1]
+[ext_resource path="res://src/game/Brick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/game/LevelArea.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,675 +24,909 @@ polygon = PoolVector2Array( 16, 16, 511, 16, 511, 288, 16, 288 )
 [node name="Brick" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick7" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick9" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick11" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 272 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 0, 1 )
 
 [node name="Brick14" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick15" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick16" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick17" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick18" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick19" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick20" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick21" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick22" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick23" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick24" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick25" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick26" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 254 )
+strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick27" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick28" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick29" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick30" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick31" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick32" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick33" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick34" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick35" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick36" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick37" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick38" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick39" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 236 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick40" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick41" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick42" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick43" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick44" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick45" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick46" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick47" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick48" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick49" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick50" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick51" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick52" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 218 )
 strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick53" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick54" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick55" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick56" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick57" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick58" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick59" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick60" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick61" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick62" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick63" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick64" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick65" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 200 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick66" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick67" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick68" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick69" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick70" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick71" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick72" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick73" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick74" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick75" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick76" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick77" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick78" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 182 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick79" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick80" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick81" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick82" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick83" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick84" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick85" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick86" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick87" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick88" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick89" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick90" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick91" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 164 )
-strength = 3
+strength = 1
 
 [node name="Brick92" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick93" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick94" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick95" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick96" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick97" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick98" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick99" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick100" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick101" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick102" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick103" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick104" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 146 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 0, 1, 1 )
 
 [node name="Brick105" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick106" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick107" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick108" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick109" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick110" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick111" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick112" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick113" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick114" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick115" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick116" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick117" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 128 )
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 0, 1 )
 
 [node name="Brick118" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick119" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick120" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick121" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick122" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick123" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick124" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick125" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick126" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick127" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick128" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick129" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick130" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 110 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 1, 0.0117647, 1 )
 
 [node name="Brick131" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick132" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick133" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick134" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick135" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick136" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick137" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick138" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick139" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick140" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick141" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick142" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick143" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 92 )
-strength = 3
+strength = 1
+use_own_color = true
+own_color = Color( 1, 0, 1, 1 )
 
 [node name="Brick144" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick145" parent="." instance=ExtResource( 2 )]
 position = Vector2( 38, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick146" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick147" parent="." instance=ExtResource( 2 )]
 position = Vector2( 114, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick148" parent="." instance=ExtResource( 2 )]
 position = Vector2( 152, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick149" parent="." instance=ExtResource( 2 )]
 position = Vector2( 190, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick150" parent="." instance=ExtResource( 2 )]
 position = Vector2( 228, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick151" parent="." instance=ExtResource( 2 )]
 position = Vector2( 266, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick152" parent="." instance=ExtResource( 2 )]
 position = Vector2( 304, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick153" parent="." instance=ExtResource( 2 )]
 position = Vector2( 342, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick154" parent="." instance=ExtResource( 2 )]
 position = Vector2( 380, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick155" parent="." instance=ExtResource( 2 )]
 position = Vector2( 418, 74 )
 strength = 1
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )
 
 [node name="Brick156" parent="." instance=ExtResource( 2 )]
 position = Vector2( 456, 74 )
 strength = 1
-
-[node name="Brick157" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 56 )
-
-[node name="Brick158" parent="." instance=ExtResource( 2 )]
-position = Vector2( 38, 56 )
-
-[node name="Brick159" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76, 56 )
-
-[node name="Brick160" parent="." instance=ExtResource( 2 )]
-position = Vector2( 114, 56 )
-
-[node name="Brick161" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 56 )
-
-[node name="Brick162" parent="." instance=ExtResource( 2 )]
-position = Vector2( 190, 56 )
-
-[node name="Brick163" parent="." instance=ExtResource( 2 )]
-position = Vector2( 228, 56 )
-
-[node name="Brick164" parent="." instance=ExtResource( 2 )]
-position = Vector2( 266, 56 )
-
-[node name="Brick165" parent="." instance=ExtResource( 2 )]
-position = Vector2( 304, 56 )
-
-[node name="Brick166" parent="." instance=ExtResource( 2 )]
-position = Vector2( 342, 56 )
-
-[node name="Brick167" parent="." instance=ExtResource( 2 )]
-position = Vector2( 380, 56 )
-
-[node name="Brick168" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418, 56 )
-
-[node name="Brick169" parent="." instance=ExtResource( 2 )]
-position = Vector2( 456, 56 )
-
-[node name="Brick170" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 38 )
-strength = 3
-
-[node name="Brick171" parent="." instance=ExtResource( 2 )]
-position = Vector2( 38, 38 )
-strength = 3
-
-[node name="Brick172" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76, 38 )
-strength = 3
-
-[node name="Brick173" parent="." instance=ExtResource( 2 )]
-position = Vector2( 114, 38 )
-strength = 3
-
-[node name="Brick174" parent="." instance=ExtResource( 2 )]
-position = Vector2( 152, 38 )
-strength = 3
-
-[node name="Brick175" parent="." instance=ExtResource( 2 )]
-position = Vector2( 190, 38 )
-strength = 3
-
-[node name="Brick176" parent="." instance=ExtResource( 2 )]
-position = Vector2( 228, 38 )
-strength = 3
-
-[node name="Brick177" parent="." instance=ExtResource( 2 )]
-position = Vector2( 266, 38 )
-strength = 3
-
-[node name="Brick178" parent="." instance=ExtResource( 2 )]
-position = Vector2( 304, 38 )
-strength = 3
-
-[node name="Brick179" parent="." instance=ExtResource( 2 )]
-position = Vector2( 342, 38 )
-strength = 3
-
-[node name="Brick180" parent="." instance=ExtResource( 2 )]
-position = Vector2( 380, 38 )
-strength = 3
-
-[node name="Brick181" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418, 38 )
-strength = 3
-
-[node name="Brick182" parent="." instance=ExtResource( 2 )]
-position = Vector2( 456, 38 )
-strength = 3
+use_own_color = true
+own_color = Color( 0, 1, 1, 1 )

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/levels/level_0001/Level_0002.gd" type="Script" id=1]
-[ext_resource path="res://src/Brick.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/LevelArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/game/levels/level_0001/Level_0002.gd" type="Script" id=1]
+[ext_resource path="res://src/game/Brick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/game/LevelArea.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )

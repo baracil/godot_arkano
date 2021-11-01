@@ -6,7 +6,7 @@ signal paddle_collision
 
 var glu_to_paddle = true
 
-var direction = Vector2(0,0)
+var _direction = Vector2(0,0)
 var velocity = Vector2(0,0)
 var speed_factor = 1
 export var base_speed = 360 setget set_base_speed,get_base_speed
@@ -17,7 +17,6 @@ func _ready():
 	pass # Replace with function body.
 
 func get_base_speed():
-	print("GET")
 	return base_speed
 
 func set_base_speed(value):
@@ -25,11 +24,11 @@ func set_base_speed(value):
 	update_velocity()
 
 func set_direction(value):
-	direction = value
+	_direction = value
 	update_velocity()
 
 func update_velocity():
-	velocity = direction*speed_factor*base_speed
+	velocity = _direction*speed_factor*base_speed
 
 
 func _physics_process(delta):
@@ -39,7 +38,6 @@ func _physics_process(delta):
 func process_input():
 	if (Input.is_action_pressed("ui_launch_ball") and glu_to_paddle):
 		glu_to_paddle = false
-
 
 
 func update_position(delta):
@@ -56,6 +54,6 @@ func update_position(delta):
 	if (collider.is_in_group(Constants.group_paddle)):
 		Events.emit_signal("ball_paddle_collided",self,collision_info)
 
-	set_direction(Physics.update_direction_on_collision(direction,collision_info))
+	set_direction(Physics.update_direction_on_collision(_direction,collision_info))
 	
 	

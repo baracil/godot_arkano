@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Ball",
 "language": "GDScript",
-"path": "res://src/Ball.gd"
+"path": "res://src/game/Ball.gd"
 }, {
 "base": "",
 "class": "GitAPI",
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
-"path": "res://src/levels/Level.gd"
+"path": "res://src/game/levels/Level.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Experiment"
-run/main_scene="res://src/Game.tscn"
+run/main_scene="res://src/game/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
