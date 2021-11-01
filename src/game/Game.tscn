@@ -7,8 +7,8 @@
 [node name="Game" type="Node"]
 script = ExtResource( 4 )
 
-[node name="Paddle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 264.5, 589.1 )
-
 [node name="Playground" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4.68459, 62.851 )
+position = Vector2( 0, 64 )
+
+[node name="Paddle" parent="." instance=ExtResource( 2 )]
+position = Vector2( 264.5, 590.2 )
