@@ -8,7 +8,11 @@ export(bool) var _sticky
 onready var _sprite: Sprite = $Sprite;
 
 func size() -> Vector2:
-	return _sprite.get_rect().size
+	var scale:Vector2 = transform.get_scale()
+	var size:Vector2 = _sprite.get_rect().size
+	size.x *= scale.x
+	size.y *= scale.y
+	return size
 
 #return
 # -1 when position left of dead zone
@@ -45,12 +49,16 @@ func process_input(delta):
 		direction.x += 1
 	
 	if (direction.x <= 0):
-		var mouse = get_local_mouse_position()
+		var viewport = get_viewport_rect()
+		var mouse = get_global_mouse_position()
+		if (mouse.x < 10 or mouse.x > viewport.size.x-10):
+			return
+		mouse = get_local_mouse_position()
 		mouse.y = 0;
 		move_and_collide(mouse)
 	else:
 		move_and_collide(direction*speed*delta)
-	
+
 
 func set_sticky(sticky:bool):
 	_sticky = sticky

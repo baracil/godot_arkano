@@ -48,8 +48,8 @@ Colors="*res://src/autoload/Colors.gd"
 Events="*res://src/autoload/Events.gd"
 Constants="*res://src/autoload/Constants.gd"
 Global="*res://src/autoload/Global.tscn"
-Physics="*res://src/autoload/Physics.tscn"
 Levels="*res://src/autoload/Levels.tscn"
+Physics="*res://src/autoload/Physics.tscn"
 
 [display]
 

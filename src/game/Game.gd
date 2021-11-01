@@ -18,8 +18,15 @@ func _ready():
 	Events.connect("ball_paddle_collided",self,"_on_ball_paddle_collision")
 
 	Global.set_nb_lives(3)
+	_center_paddle()
 	Levels.load_level(1)
 
+
+func _center_paddle():
+	var l = get_viewport().size.x*0.5
+	print(l)
+	_paddle.position.x = get_viewport().size.x*0.5
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	for id in balls:
@@ -27,16 +34,15 @@ func _physics_process(_delta):
 		ball_info.update_position_if_glu_on_paddle(_paddle)
 
 
-func put_ball_on_paddle(ball:Ball, offset:float = 0):
+func put_ball_on_paddle(ball:Ball):
 	var paddle_sprite_size = _paddle.size();
 	var ball_size = ball.size()
 	
-	var ball_x_offset = offset;
-	ball.position.x = _paddle.position.x + ball_x_offset
+	ball.position.x = _paddle.position.x
 	ball.position.y = _paddle.position.y - (paddle_sprite_size.y + ball_size.y)*0.5
 	ball.set_direction(_paddle.get_bounced_direction(ball.position))
 	
-	_get_or_create_ball_info(ball as Ball)._offset = ball_x_offset
+	_get_or_create_ball_info(ball as Ball)._offset = 0
 	
 
 func add_ball_to_game(ball:KinematicBody2D):
