@@ -3,20 +3,13 @@ extends Node
 
 const group_brick = "Brick"
 const group_ball = "Ball"
-const group_palette = "Palette"
-
-const signal_ball__palette_collision = "palette_collision"
-const signal_ball__lost = "lost"
-const signal_level__level_done = "level_done"
-const signal_global__score_changed = "score_changed"
-const signal_global__player_died = "player_died"
-const signal_global__nb_lives_changed = "nb_lives_changed"
-const signal_brick__destroyed = "destroyed"
+const group_paddle = "Paddle"
 
 const ball_scene_path = "res://src/Ball.tscn"
-const hud_palette_scene_path = "res://src/HUDPalette.tscn"
+const hud_paddle_scene_path = "res://src/HUDPaddle.tscn"
 
-enum BounceMode {NORMAL, REVERSED, VERTICAL, DECREASE_CLOCK, DECREASE_TRIGO}
+
+const BouncedAngle = PoolRealArray([60,45,30,-30,-45,-60])
 
 func level_scene_path(level_number:int) -> String :
 	var group = (level_number/10)*10+1
@@ -26,33 +19,40 @@ func level_scene_path(level_number:int) -> String :
 const default_indestructible_brick_color:Color = Color.gray
 
 enum BrickType {INDESCTRUTIBLE, STANDARD}
-var _brick_colors = {}
+var _brick_gradients = {}
 
-const _brick_colors_by_strength = [Color.green, Color.yellow, Color.orange, Color.orangered, Color.red]
+const _brick_gradients_by_strength = [Color.green, Color.yellow, Color.orange, Color.orangered, Color.red]
 	
 func get_default_brick_color(strength) -> Color:
 	var strength_index = strength-1	
-	if strength_index<0 or strength_index >= _brick_colors_by_strength.size():
-		return _brick_colors_by_strength[0]
-	return _brick_colors_by_strength[strength_index]
-	
+	if strength_index<0 or strength_index >= _brick_gradients_by_strength.size():
+		return _brick_gradients_by_strength[0]
+	return _brick_gradients_by_strength[strength_index]
+
+
 func get_brick_color(color,strength,health:float):
-	var brick_color:BrickColor = _get_brick_color(color)
+	var brick_color:BrickGradient = _get_brick_gradient(color)
 	if brick_color == null:
 		return Color.black
 	else:
 		var offset = 1.0-(health/strength)
 		return brick_color.interpolate(offset)
 
-func _get_brick_color(color):
-	if _brick_colors.has(color):
-		return _brick_colors[color]
-	var brick_color = BrickColor.new()
-	brick_color._initialize(color)
-	_brick_colors[color] = brick_color
+
+func _get_brick_gradient(color) -> BrickGradient:
+	if _brick_gradients.has(color):
+		return _brick_gradients[color]
+	var brick_color = BrickGradient.create(color)
+	_brick_gradients[color] = brick_color
 	return brick_color
 
-class BrickColor:
+func _create_brick_gradients():
+	_brick_gradients.clear()
+
+func _ready():
+	Events.connect("level_done",self,"_create_brick_gradients")
+
+class BrickGradient:
 	var base_color:Color
 	var gradient:Gradient
 	
@@ -65,4 +65,7 @@ class BrickColor:
 	func interpolate(offset:float) -> Color:
 		return gradient.interpolate(offset)
 
-
+	static func create(color:Color) -> BrickGradient:
+		var result:BrickGradient = BrickGradient.new()
+		result._initialize(color)
+		return result

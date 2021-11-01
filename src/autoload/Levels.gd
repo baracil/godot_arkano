@@ -1,6 +1,5 @@
 extends Node
 
-signal level_done
 
 var _level_area:Polygon2D
 var _current_level:Node
@@ -23,13 +22,7 @@ func _set_current_level(level:Node2D):
 	if (_current_level == null):
 		return	
 	Global.initialize(_current_level)
-
-	_current_level.connect(Constants.signal_level__level_done,self,"_on_level_done")	
 	_level_area.add_child(_current_level)
-	
-	
-func _on_level_done(level_number:int):
-	emit_signal("level_done",level_number)
 
 
 func load_level(level_number:int):

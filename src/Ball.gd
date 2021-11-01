@@ -1,24 +1,24 @@
 extends KinematicBody2D
-
-export (PackedScene) var Palette
+class_name Ball
 
 signal lost
-signal palette_collision
+signal paddle_collision
 
-var palette;
-
-var glu_to_palette = true
+var glu_to_paddle = true
 
 var direction = Vector2(0,0)
 var velocity = Vector2(0,0)
 var speed_factor = 1
-export var base_speed = 360 setget set_base_speed
+export var base_speed = 360 setget set_base_speed,get_base_speed
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+func get_base_speed():
+	print("GET")
+	return base_speed
 
 func set_base_speed(value):
 	base_speed = value
@@ -37,13 +37,14 @@ func _physics_process(delta):
 	update_position(delta)
 
 func process_input():
-	if (Input.is_action_pressed("ui_launch_ball") and glu_to_palette):
-		glu_to_palette = false
-		set_direction(Vector2(0,-1))
+	if (Input.is_action_pressed("ui_launch_ball") and glu_to_paddle):
+		glu_to_paddle = false
 
 
 
 func update_position(delta):
+	if glu_to_paddle:
+		return
 	var collision_info = move_and_collide(velocity*delta)
 	if (collision_info == null):
 		return
@@ -52,8 +53,9 @@ func update_position(delta):
 
 	#todo handle remaining
 	var collider = collision_info.collider
-	if (collider.is_in_group(Constants.group_palette)):
-		emit_signal(Constants.signal_ball__palette_collision, self, collision_info)
+	if (collider.is_in_group(Constants.group_paddle)):
+		Events.emit_signal("ball_paddle_collided",self,collision_info)
 
-	if not glu_to_palette:
-		set_direction(Physics.update_direction_on_collision(direction,collision_info))
+	set_direction(Physics.update_direction_on_collision(direction,collision_info))
+	
+	

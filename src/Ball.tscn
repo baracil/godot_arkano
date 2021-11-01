@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/red_ball.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 4.22766
+radius = 5.97627
 
 [node name="Ball" type="KinematicBody2D" groups=[
 "Ball",
@@ -17,5 +17,4 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )

@@ -64,7 +64,7 @@ func hit():
 	if (_health>0 and not is_indestructible()):
 		_decrease_health()
 		if (_health <= 0):
-			emit_signal(Constants.signal_brick__destroyed,strength)
+			Events.emit_signal("brick_destroyed",strength)
 			queue_free()
 	
 # Called when the node enters the scene tree for the first time.

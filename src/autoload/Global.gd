@@ -5,7 +5,7 @@ signal player_died
 signal nb_lives_changed
 
 var _score:int = 0
-var _nb_lives:int = 3
+var _nb_lives:int = 0
 
 
 func get_nb_lives()->int:
@@ -17,6 +17,10 @@ func remove_one_life():
 func add_one_life():
 	_update_nb_lives(true)
 	
+func set_nb_lives(nb_lives):
+	_nb_lives = nb_lives
+	Events.emit_signal("nb_lives_changed",nb_lives)
+	
 
 func _update_nb_lives(increase:bool):
 	if _nb_lives<=0:
@@ -25,9 +29,10 @@ func _update_nb_lives(increase:bool):
 		_nb_lives += 1
 	else:
 		_nb_lives -= 1
-	emit_signal(Constants.signal_global__nb_lives_changed)
+	_nb_lives = max(0,_nb_lives)
+	Events.emit_signal("nb_lives_changed",_nb_lives)
 	if _nb_lives<=0:
-		emit_signal(Constants.signal_global__player_died)
+		Events.emit_signal("player_died")
 	
 
 func get_score()->int:
@@ -37,7 +42,7 @@ func add_to_score(value:int):
 	if value == 0:
 		return
 	_score += value
-	emit_signal(Constants.signal_global__score_changed)
+	Events.emit_signal("score_changed",_score)
 
 func initialize(object) -> bool:
 	if (object.has_method("initialize")):

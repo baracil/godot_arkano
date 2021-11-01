@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://src/Ball.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://src/levels/Level.gd"
 } ]
 _global_script_class_icons={
+"Ball": "",
 "GitAPI": "",
 "Level": ""
 }
@@ -32,6 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Events="*res://src/autoload/Events.gd"
 Constants="*res://src/autoload/Constants.gd"
 Global="*res://src/autoload/Global.tscn"
 Physics="*res://src/autoload/Physics.tscn"
@@ -59,7 +66,7 @@ ui_launch_ball={
 [layer_names]
 
 2d_physics/layer_1="wall"
-2d_physics/layer_2="palette"
+2d_physics/layer_2="paddle"
 2d_physics/layer_3="ball"
 2d_physics/layer_4="brick"
 2d_physics/layer_5="bonus"

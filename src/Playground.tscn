@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/PaletteSupport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/LevelArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/DeathLine.gd" type="Script" id=3]
+[ext_resource path="res://src/HudLife.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 264, 10 )
@@ -23,6 +25,7 @@ __meta__ = {
 
 [node name="DeathLine" type="Area2D" parent="."]
 position = Vector2( 264, 572.307 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -40,5 +43,7 @@ position = Vector2( 16, 16 )
 color = Color( 0.882353, 0.882353, 0.882353, 0 )
 polygon = PoolVector2Array( 0, 0, 495, 0, 495, 288, 0, 288 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 18, 559 )
+[node name="HudLife" parent="." instance=ExtResource( 4 )]
+position = Vector2( 19, 561.307 )
+
+[connection signal="body_entered" from="DeathLine" to="DeathLine" method="_on_DeathLine_body_entered"]

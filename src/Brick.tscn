@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Brick.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23, 13 )
+extents = Vector2( 19.4628, 9.5098 )
 
 [node name="Brick" type="StaticBody2D" groups=[
 "Brick",
@@ -12,15 +12,21 @@ script = ExtResource( 1 )
 strength = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 16, -6 )
+position = Vector2( 19.5, -9.5 )
 shape = SubResource( 1 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 position = Vector2( 0, -12 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 0, -7, 39, -7, 39, 12, 0, 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2( 2, -10 )
+color = Color( 1, 1, 0, 1 )
 polygon = PoolVector2Array( -1, -8, 36, -8, 36, 9, -1, 9 )
+__meta__ = {
+"_edit_lock_": true
+}
