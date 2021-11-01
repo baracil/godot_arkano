@@ -1,8 +1,34 @@
 extends Node
 
 signal score_changed
+signal player_died
+signal nb_lives_changed
 
 var _score:int = 0
+var _nb_lives:int = 3
+
+
+func get_nb_lives()->int:
+	return _nb_lives
+
+func remove_one_life():
+	_update_nb_lives(false)
+
+func add_one_life():
+	_update_nb_lives(true)
+	
+
+func _update_nb_lives(increase:bool):
+	if _nb_lives<=0:
+		return
+	if increase:
+		_nb_lives += 1
+	else:
+		_nb_lives -= 1
+	emit_signal(Constants.signal_global__nb_lives_changed)
+	if _nb_lives<=0:
+		emit_signal(Constants.signal_global__player_died)
+	
 
 func get_score()->int:
 	return _score

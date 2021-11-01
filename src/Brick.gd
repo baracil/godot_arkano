@@ -3,11 +3,24 @@ extends StaticBody2D
 
 signal destroyed;
 
-export(int,1,5) var strength := 1 setget set_strength
 export(Constants.BrickType) var brick_type = Constants.BrickType.STANDARD setget set_brick_type
-export var _health := 1 setget set_health
+
+export(int,1,5) var strength := 1 setget set_strength
+export(bool) var use_own_color = false setget set_use_own_color
+export(Color) var own_color:Color = Color.black setget set_own_color
+
+var _health := 1
+
 
 onready var _polygone2d = $Polygon2D
+
+func set_own_color(value):
+	own_color = value
+	_update_color()
+
+func set_use_own_color(value):
+	use_own_color = value
+	_update_color()
 
 func set_health(value):
 	_health = max(0,min(strength,value))
@@ -28,7 +41,15 @@ func set_brick_type(value):
 # var b = "text"
 
 func _update_color():
-	var color = Constants.get_brick_color(brick_type, strength, _health)
+	var color = null
+	if use_own_color:
+		color = Constants.get_brick_color(own_color,strength, _health)
+	elif self.is_indestructible():
+		color = Constants.default_indestructible_brick_color
+	else:
+		var default_color = Constants.get_default_brick_color(strength)
+		color = Constants.get_brick_color(default_color, strength, _health)
+
 	if not _polygone2d == null:
 		_polygone2d.set_color(color)
 

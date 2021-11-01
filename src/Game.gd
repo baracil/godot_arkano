@@ -6,7 +6,9 @@ export (PackedScene) var Ball
 
 var balls = {}
 var balls_offsets = {}
+var hub_lives_displayed = []
 
+onready var hud_lives_origin = 	$Playground/Position2D
 onready var palette = $Palette
 onready var palette_sprite = $Palette/Sprite
 
@@ -46,20 +48,23 @@ func _on_ball_lost(body:Node):
 	balls.erase(ball_id)
 	ball.queue_free()
 	if (balls.empty()):
-		emit_signal("game_over")
+		Global.remove_one_life()
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_reset_ball()
 	$Playground/DeathLine.connect("body_entered",self,"_on_ball_lost")
 	
 	Levels._set_level_area($Playground/LevelArea)
 	Levels.connect("level_done",self,"_on_level_done")
-	Levels.load_level(1)
 	
 	Global.connect(Constants.signal_global__score_changed,self,"_update_on_score_changed")
+	Global.connect("nb_lives_changed", self,"_on_nb_lives_changed")
+	Global.connect("player_died", self,"_on_player_died")
+
 	_update_on_score_changed()
+	_on_nb_lives_changed()
+	Levels.load_level(1)
 	
 func _update_on_score_changed():
 	var score:String = String(Global.get_score());
@@ -71,6 +76,35 @@ func _remove_all_balls():
 		ball.palette=null
 		ball.queue_free()
 	balls.clear()
+
+func _on_nb_lives_changed():
+	var nb_lives = Global.get_nb_lives()
+	
+	while hub_lives_displayed.size() > nb_lives:
+		_remove_one_hud_life()
+		
+	while hub_lives_displayed.size() < nb_lives:
+		_add_one_hud_life()
+	
+	if (nb_lives>0):
+		_reset_ball()
+	else:
+		_on_Game_game_over()
+
+func _remove_one_hud_life():
+	if hub_lives_displayed.empty():
+		return
+	var hud_live:Node = hub_lives_displayed.pop_back();
+	hud_lives_origin.remove_child(hud_live)
+	hud_live.queue_free()
+
+func _add_one_hud_life():
+	var nb_displayed = hub_lives_displayed.size()
+	var hud_palette:Node2D = ResourceLoader.load(Constants.hud_palette_scene_path).instance()
+	hud_palette.position.x = 50*nb_displayed
+	hud_palette.position.y = 0
+	hub_lives_displayed.append(hud_palette)
+	hud_lives_origin.add_child(hud_palette)
 
 
 func _reset_ball():

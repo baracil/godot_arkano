@@ -9,7 +9,7 @@ extents = Vector2( 23, 13 )
 "Brick",
 ]]
 script = ExtResource( 1 )
-strength = 5
+strength = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

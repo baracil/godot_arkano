@@ -39,3 +39,6 @@ collision_layer = 0
 position = Vector2( 16, 16 )
 color = Color( 0.882353, 0.882353, 0.882353, 0 )
 polygon = PoolVector2Array( 0, 0, 495, 0, 495, 288, 0, 288 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 18, 559 )
