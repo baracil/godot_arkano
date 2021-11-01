@@ -1,9 +1,6 @@
 extends KinematicBody2D
 class_name Ball
 
-signal lost
-signal paddle_collision
-
 var glu_to_paddle = true
 
 var _direction = Vector2(0,0)

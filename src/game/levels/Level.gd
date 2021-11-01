@@ -1,8 +1,6 @@
 extends Node2D
 class_name Level
 
-signal level_done
-
 var _level_number
 var _number_of_bricks := 0
 

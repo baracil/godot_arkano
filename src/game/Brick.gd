@@ -1,15 +1,13 @@
 tool
 extends StaticBody2D
 
-signal destroyed;
-
 export(Constants.BrickType) var brick_type = Constants.BrickType.STANDARD setget set_brick_type
 
 export(int,1,5) var strength := 1 setget set_strength
 export(bool) var use_own_color = false setget set_use_own_color
 export(Color) var own_color:Color = Color.black setget set_own_color
 
-var _health := 1
+var _health:int= 1
 
 
 onready var _polygone2d = $Polygon2D
@@ -22,7 +20,7 @@ func set_use_own_color(value):
 	use_own_color = value
 	_update_color()
 
-func set_health(value):
+func set_health(value:int):
 	_health = max(0,min(strength,value))
 	_update_color()
 

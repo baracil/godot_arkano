@@ -8,7 +8,8 @@
 script = ExtResource( 4 )
 
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 263.5, 590.1 )
+position = Vector2( 264.5, 590.1 )
+_sticky = true
 
 [node name="Playground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 64 )

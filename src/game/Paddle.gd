@@ -40,7 +40,13 @@ func process_input(delta):
 		direction.x -= 1
 	if (Input.is_action_pressed("ui_right")):
 		direction.x += 1
-	move_and_collide(direction*speed*delta);
+	
+	if (direction.x <= 0):
+		var mouse = get_local_mouse_position()
+		mouse.y = 0;
+		move_and_collide(mouse)
+	else:
+		move_and_collide(direction*speed*delta)
 	
 
 func set_sticky(sticky:bool):

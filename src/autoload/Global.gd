@@ -1,8 +1,5 @@
 extends Node
 
-signal score_changed
-signal player_died
-signal nb_lives_changed
 
 var _score:int = 0
 var _nb_lives:int = 0
