@@ -12,13 +12,10 @@ extents = Vector2( 264, 10 )
 collision_mask = 6
 
 [node name="Walls" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( 0, 0, 527, 0, 527, 576, 511, 576, 511, 16, 16, 16, 16, 576, 0, 576 )
-__meta__ = {
-"_edit_lock_": true
-}
+polygon = PoolVector2Array( 0, 0, 528, 0, 528, 576, 511, 576, 511, 16, 16, 16, 16, 576, 0, 576 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 0, 0, 527, 0, 527, 576, 511, 576, 511, 16, 16, 16, 16, 576, 0, 576 )
+polygon = PoolVector2Array( 0, 0, 528, 0, 528, 576, 511, 576, 511, 16, 16, 16, 16, 576, 0, 576 )
 __meta__ = {
 "_edit_lock_": true
 }
