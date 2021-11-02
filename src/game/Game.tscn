@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/game/Playground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/game/Paddle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/game/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/game/Game.gd" type="Script" id=4]
 
 [node name="Game" type="Node"]
@@ -13,8 +14,4 @@ position = Vector2( 0, 64 )
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 264.5, 590.2 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 16, 352 )
-
-[node name="Position2D2" type="Position2D" parent="."]
-position = Vector2( 511, 352 )
+[node name="HUD" parent="." instance=ExtResource( 3 )]

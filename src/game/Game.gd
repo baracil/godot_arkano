@@ -13,13 +13,18 @@ func _ready():
 
 	Events.connect("level_done",self,"_on_level_done")
 	Events.connect("ball_lost",self,"_on_ball_lost")
-	Events.connect("player_died",self,"_on_player_died")
 	Events.connect("nb_lives_changed", self,"_on_nb_lives_changed")
 	Events.connect("ball_paddle_collided",self,"_on_ball_paddle_collision")
 
-	Global.set_nb_lives(3)
 	_center_paddle()
+
+	State.set_score(0)
+	State.set_nb_lives(3)
 	Levels.load_level(1)
+
+func _process(delta):
+	if Input.is_action_just_released("ui_toggle_use_mouse"):
+		State.toggle_use_mouse()
 
 
 func _center_paddle():
@@ -78,15 +83,12 @@ func _on_ball_lost(body:Node):
 	balls.erase(ball_id)
 	ball_info._ball.queue_free()
 	if (balls.empty()):
-		Global.remove_one_life()
+		State.remove_one_life()
 	
 
 func _on_nb_lives_changed(nb_lives):
 	if nb_lives > 0:
 		_reset_ball()	
-
-func _on_player_died():
-	print("Game Over") # Replace with function body.
 
 	
 func _remove_all_balls():

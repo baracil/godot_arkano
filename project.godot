@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Experiment"
-run/main_scene="res://src/game/Game.tscn"
+run/main_scene="res://src/intro/Into.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -50,6 +50,7 @@ Constants="*res://src/autoload/Constants.gd"
 Global="*res://src/autoload/Global.tscn"
 Levels="*res://src/autoload/Levels.tscn"
 Physics="*res://src/autoload/Physics.tscn"
+State="*res://src/autoload/State.gd"
 
 [display]
 
@@ -70,6 +71,11 @@ ui_launch_ball={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+ui_toggle_use_mouse={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -78,6 +84,12 @@ ui_launch_ball={
 2d_physics/layer_3="ball"
 2d_physics/layer_4="brick"
 2d_physics/layer_5="bonus"
+
+[locale]
+
+locale_filter=[ 1, [ "en_US", "fr" ] ]
+translation_remaps={
+}
 
 [physics]
 

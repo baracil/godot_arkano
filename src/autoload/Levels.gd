@@ -29,6 +29,7 @@ func load_level(level_number:int):
 	var scene_name:String = Constants.level_scene_path(level_number)
 	var level = ResourceLoader.load(scene_name).instance()
 	_set_current_level(level)
+	State.set_level_number(level_number)
 	
 
 func _ready():

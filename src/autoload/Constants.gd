@@ -6,6 +6,8 @@ const group_paddle = "Paddle"
 
 const ball_scene_path = "res://src/game/Ball.tscn"
 const hud_paddle_scene_path = "res://src/game/HUDPaddle.tscn"
+const game_scene_path = "res://src/game/Game.tscn"
+const intro_scene_path = "res://src/game/Game.tscn"
 
 const BouncedAngle = PoolRealArray([60,45,30,-30,-45,-60])
 

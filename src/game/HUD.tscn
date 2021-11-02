@@ -1,16 +1,128 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/orbitron_black_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/game/HUD.gd" type="Script" id=2]
+[ext_resource path="res://assets/orbitron_black_64_o.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:custom_colors/font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver:custom_colors/font_outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 527.0
+[node name="Panel" type="Panel" parent="."]
+margin_right = 528.0
 margin_bottom = 64.0
-columns = 3
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+margin_right = 528.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Panel/GridContainer"]
+margin_right = 262.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "Score"
+align = 1
+valign = 1
+
+[node name="LevelLabel" type="Label" parent="Panel/GridContainer"]
+margin_left = 266.0
+margin_right = 528.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "Level"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="Panel/GridContainer"]
+margin_top = 33.0
+margin_right = 262.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+
+[node name="Level" type="Label" parent="Panel/GridContainer"]
+margin_left = 266.0
+margin_top = 33.0
+margin_right = 528.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 528.0
+margin_bottom = 640.0
+grow_horizontal = 2
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="CenterContainer"]
+margin_left = 26.0
+margin_top = 272.0
+margin_right = 501.0
+margin_bottom = 367.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+custom_constants/shadow_offset_y = 7
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="GameOverAnimation" type="AnimationPlayer" parent="CenterContainer"]
+"anims/New Anim" = SubResource( 1 )

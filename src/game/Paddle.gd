@@ -43,12 +43,7 @@ func get_bounced_direction(collision_position:Vector2) -> Vector2:
 
 func process_input(delta):
 	var direction = Vector2(0,0);
-	if (Input.is_action_pressed("ui_left")):
-		direction.x -= 1
-	if (Input.is_action_pressed("ui_right")):
-		direction.x += 1
-	
-	if (direction.x <= 0):
+	if State.get_use_mouse():
 		var viewport = get_viewport_rect()
 		var mouse = get_global_mouse_position()
 		if (mouse.x < 10 or mouse.x > viewport.size.x-10):
@@ -57,6 +52,10 @@ func process_input(delta):
 		mouse.y = 0;
 		move_and_collide(mouse)
 	else:
+		if (Input.is_action_pressed("ui_left")):
+			direction.x -= 1
+		if (Input.is_action_pressed("ui_right")):
+			direction.x += 1
 		move_and_collide(direction*speed*delta)
 
 
@@ -73,3 +72,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	process_input(delta)
+	
