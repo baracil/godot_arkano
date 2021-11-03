@@ -1,3 +1,4 @@
 .idea
 .import
 addons/godot-git-plugin
+build/
