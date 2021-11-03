@@ -7,7 +7,7 @@ export(int,1,5) var strength := 1 setget set_strength
 export(bool) var use_own_color = false setget set_use_own_color
 export(Color) var own_color:Color = Color.black setget set_own_color
 
-var _health:int= 1
+var _health:int = 1
 
 
 onready var _polygone2d = $Content
@@ -57,7 +57,7 @@ func hit():
 	if (_health>0 and not is_indestructible()):
 		_decrease_health()
 		if (_health <= 0):
-			Events.emit_signal("brick_destroyed",strength)
+			Events.emit_signal("brick_destroyed",strength, position)
 			queue_free()
 	
 # Called when the node enters the scene tree for the first time.

@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/game/PaletteSupport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/game/LevelArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/game/DeathLine.gd" type="Script" id=3]
 [ext_resource path="res://src/game/HudLife.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/game/Playground.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 264, 10 )
 
 [node name="Playground" type="StaticBody2D"]
 collision_mask = 6
+script = ExtResource( 5 )
 
 [node name="Walls" type="Polygon2D" parent="."]
 polygon = PoolVector2Array( 0, 0, 528, 0, 528, 576, 512, 576, 512, 16, 16, 16, 16, 576, 0, 576 )

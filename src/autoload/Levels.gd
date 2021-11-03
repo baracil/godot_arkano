@@ -8,7 +8,7 @@ func _set_level_area(level_area:Polygon2D):
 	_level_area = level_area
 
 func _dispose_current_level():
-	if (_current_level == null):
+	if not is_instance_valid(_current_level):
 		return
 	Global.dispose(_current_level)
 	_level_area.remove_child(_current_level)
@@ -30,6 +30,10 @@ func load_level(level_number:int):
 	var level = ResourceLoader.load(scene_name).instance()
 	_set_current_level(level)
 	State.set_level_number(level_number)
+	
+func clear_level():
+	_dispose_current_level()
+	State.set_level_number(0)
 	
 
 func _ready():

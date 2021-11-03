@@ -11,7 +11,6 @@ func get_use_mouse() -> bool:
 	
 func set_use_mouse(use_mouse:bool):
 	_use_mouse = use_mouse
-	print(_use_mouse)
 	Events.emit_signal("use_mouse_changed",_use_mouse)
 	
 func toggle_use_mouse():
@@ -25,6 +24,9 @@ func remove_one_life():
 
 func add_one_life():
 	_update_nb_lives(true)
+
+func is_player_alive() -> bool:
+	return _nb_lives > 0
 	
 func set_nb_lives(nb_lives):
 	_nb_lives = nb_lives

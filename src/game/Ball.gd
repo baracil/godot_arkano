@@ -26,6 +26,9 @@ func set_direction(value):
 	_direction = value
 	update_velocity()
 
+func get_direction() -> Vector2:
+	return _direction
+
 func update_velocity():
 	velocity = _direction*speed_factor*base_speed
 

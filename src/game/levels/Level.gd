@@ -6,7 +6,7 @@ var _number_of_bricks := 0
 
 onready var bricks = get_children()
 
-func _on_brick_destroyed(strength):
+func _on_brick_destroyed(strength, position):
 	State.add_to_score(strength)
 	_number_of_bricks -= 1
 	if (_number_of_bricks == 0):

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/game/Bonus.gd" type="Script" id=1]
+[ext_resource path="res://assets/bonus_life.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.35773
+
+[node name="Node2D" type="KinematicBody2D" groups=[
+"Bonus",
+]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

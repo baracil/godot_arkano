@@ -5,7 +5,8 @@ export var speed := 600;
 
 export(bool) var _sticky
 
-onready var _sprite: Sprite = $Sprite;
+onready var _sprite: Sprite = $Sprite
+onready var _timer:Timer = $StickyTimer
 
 func size() -> Vector2:
 	var scale:Vector2 = transform.get_scale()
@@ -62,12 +63,20 @@ func process_input(delta):
 func set_sticky(sticky:bool):
 	_sticky = sticky
 
+func set_timed_sticky():
+	set_sticky(true)
+	_timer.one_shot = true
+	_timer.start(10)
+	
 func is_sticky():
 	return _sticky
 
+func _on_sticky_timer_timeout():
+	set_sticky(false)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	_timer.connect("timeout",self,"_on_sticky_timer_timeout")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

@@ -32,3 +32,5 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="StickyTimer" type="Timer" parent="."]

@@ -6,7 +6,6 @@ func _ready():
 	Events.connect("nb_lives_changed",self,"_on_nb_lives_changed")
 
 func _on_nb_lives_changed(nb_lives):
-	print("NB LIVES ",nb_lives)
 	while _hub_lives_displayed.size() > nb_lives:
 		_remove_one_hud_life()
 	while _hub_lives_displayed.size() < nb_lives:

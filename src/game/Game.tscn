@@ -15,3 +15,7 @@ position = Vector2( 0, 64 )
 position = Vector2( 264.5, 590.2 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_exited" from="Paddle" to="." method="_on_Paddle_mouse_exited"]

@@ -24,6 +24,5 @@ func _on_level_number_changed(level_number):
 
 
 func _on_game_started():
-	print("TOTO")
 	_animation.stop(true)
 	_animation.seek(0)

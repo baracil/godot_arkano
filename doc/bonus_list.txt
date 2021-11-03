@@ -1,0 +1,12 @@
+
+- [L] Extra Life
+- [B] Pop 2 balles en plus   
+- [S] Sticky paddle          
+
+- [F] Tir depuis la paddle    
+
+- [E] Extend the paddle
+ 
+Supprimer tous les bonus quand on perd une vie
+Supprimer tous les bonus quand on change de niveau
+Mieux gérer la collision des bonus

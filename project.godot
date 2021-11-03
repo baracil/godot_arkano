@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/game/Ball.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Bonus",
+"language": "GDScript",
+"path": "res://src/game/Bonus.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -28,18 +33,25 @@ _global_script_classes=[ {
 "class": "Paddle",
 "language": "GDScript",
 "path": "res://src/game/Paddle.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Playground",
+"language": "GDScript",
+"path": "res://src/game/Playground.gd"
 } ]
 _global_script_class_icons={
 "Ball": "",
+"Bonus": "",
 "GitAPI": "",
 "Level": "",
-"Paddle": ""
+"Paddle": "",
+"Playground": ""
 }
 
 [application]
 
 config/name="Experiment"
-run/main_scene="res://src/intro/Into.tscn"
+run/main_scene="res://src/intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]

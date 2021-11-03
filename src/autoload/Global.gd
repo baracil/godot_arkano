@@ -1,25 +1,20 @@
 extends Node
 
-func initialize(object) -> bool:
-	if (object.has_method("initialize")):
+
+func _has_method(object, method:String) -> bool:
+	return is_instance_valid(object) and object.has_method(method)
+
+func initialize(object):
+	if _has_method(object,"initialize"):
 		object.initialize()
-		return true
-	else:
-		return false
 
-func dispose(object) -> bool:
-	if (object.has_method("dispose")):
+func dispose(object):
+	if _has_method(object,"dispose"):
 		object.dispose()
-		return true
-	else:
-		return false
 
-func hit(hit_object) -> bool:
-	if (hit_object.has_method("hit")):
-		hit_object.hit()
-		return true
-	else:
-		return false
+func hit(object):
+	if _has_method(object,"hit"):
+		object.hit()
 
 func switch_to_game():
 	Events.emit_signal("game_started")
