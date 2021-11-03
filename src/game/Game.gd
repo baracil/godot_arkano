@@ -89,11 +89,12 @@ func _on_ball_lost(body:Node):
 	ball_info._ball.queue_free()
 	if (balls.empty()):
 		State.remove_one_life()
+		_playground.clear_bonus()
 		if State.is_player_alive():
 			_reset_ball()	
 
 func _on_brick_destroyed(strength, position):
-	if (randi() % 5 >= strength):
+	if (randi() % Constants.BONUS_RANGE >= strength):
 		return
 	var bonus_type = randi() % Constants.BonusType.size();
 	_playground.pop_bonus(bonus_type, position) 	
@@ -131,6 +132,7 @@ func _reset_ball():
 
 func _on_level_done(level_number:int):
 	_reset_ball()
+	_playground.clear_bonus()
 	Levels.load_level(level_number+1)
 	
 func _on_timer_timeout():

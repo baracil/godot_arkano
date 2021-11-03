@@ -17,6 +17,7 @@ const BouncedAngle = PoolRealArray([60,45,30,-30,-45,-60])
 
 enum BonusType {Life, Balls, Sticky}
 
+var BONUS_RANGE = 20
 
 func level_scene_path(level_number:int) -> String :
 	var group = (level_number/10)*10+1

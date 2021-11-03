@@ -9,4 +9,4 @@
  
 Supprimer tous les bonus quand on perd une vie
 Supprimer tous les bonus quand on change de niveau
-Mieux gérer la collision des bonus
+

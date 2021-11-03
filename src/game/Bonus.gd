@@ -44,7 +44,6 @@ func _physics_process(delta):
 	if collider.is_in_group(Constants.group_paddle):
 		Events.emit_signal("bonus_picked", _bonus_type)
 		queue_free()
-	
 
 
 func _on_VisibilityNotifier2D_screen_exited():
